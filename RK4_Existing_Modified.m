@@ -81,30 +81,19 @@ for i = 1:length(t)-1
     k4 = dt * modified_modelES(t(i)+dt, v(:,i)+k3, params);
     v(:,i+1) = v(:,i) + (k1 + 2*k2 + 2*k3 + k4)/6;
 end
-% Plot the results
-%figure;
-%plot(t, y(4, :),'b','lineWidth',6.0, 'DisplayName', 'P_N Population without Estrogen and \beta-catenin');
-%hold on
-%plot(t, v(4, :),'g-.','lineWidth',6.0, 'DisplayName', 'P_N Population with Estrogen and \beta-catenin');
-%xlabel('Time(days)','FontSize', 20, 'FontWeight', 'bold');
-%ylabel('Natural Cell Population (P_N)', 'FontSize', 20, 'FontWeight', 'bold');
-%legend('show');
-%title('Comparison between Natural Cell Population (P_N)','FontSize', 20, 'FontWeight', 'bold');
+
 figure;
 plot(t,y(1, :),'c','Linewidth',6.0)
 set(gca,'FontSize',16)
 xlabel('\bf Time(days)','fontsize',30,'linewidth',30);ylabel('\bf  P_T Population','fontsize',30,'linewidth',30);
-%axis([0 600 1000 300000])
 set(gca,'linewidth',2.5); box off;
 set(gca,'FontSize',30)
 hold on
 plot(t, v(1, :),'r','Linewidth',6.0)
 set(gca,'FontSize',16)
 xlabel('\bf  Time(days) ','fontsize',30,'linewidth',30);ylabel('\bf Tumor Cell (P_T) ','fontsize',30,'linewidth',30);
-%axis([0 600 1000 100000])
 set(gca,'linewidth',2.5); box off;
 set(gca,'FontSize',30)
-%legend('exact  for h=10^{-4}  ','approx. for h=10^{-4}')
 [~, hobj, ~, ~] = legend({'\bf P_T without Est. and \beta-cat. ','\bf P_T with Est. and \beta-cat.'},'Fontsize',10,'Location','northeast');
 hl = findobj(hobj,'type','line');
 set(hl,'LineWidth',10);
