@@ -99,17 +99,14 @@ figure;
 plot(t, y(4,:),'b','LineWidth',4.5); hold on;
 set(gca,'FontSize',16)
 xlabel('\bf Time(days)','fontsize',30,'linewidth',30);ylabel('\bf Normal Cell (P_N)','fontsize',30,'linewidth',30);
-%axis([0 600 1000 300000])
 set(gca,'linewidth',2); box off;
 set(gca,'FontSize',30)
 hold on
 plot(t, z(4,:),'r','LineWidth',4.5);
 set(gca,'FontSize',16)
 xlabel('\bf  Time(days) ','fontsize',30,'linewidth',30);ylabel('\bf Normal cell (P_N)','fontsize',30,'linewidth',30);
-%axis([0 600 1000 100000])
 set(gca,'linewidth',2); box off;
 set(gca,'FontSize',30)
-%legend('exact  for h=10^{-4}  ','approx. for h=10^{-4}')
 [~, hobj, ~, ~] = legend({'\bf without control ','\bf with control u_3 '},'Fontsize',15,'Location','northeast');
 hl = findobj(hobj,'type','line');
 set(hl,'LineWidth',8);
