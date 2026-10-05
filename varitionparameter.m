@@ -112,26 +112,20 @@ figure;
 plot(t, y(1, :),'r-.','lineWidth',6.0);
 set(gca,'FontSize',16)
 xlabel('\bf Time(days)','fontsize',30,'linewidth',30);ylabel('\bf  Tumor Cell (P_T)','fontsize',30,'linewidth',30);
-%axis([0 600 1000 300000])
 set(gca,'linewidth',2.5); box off;
 set(gca,'FontSize',30)
 hold on
 plot(t, z(1, :),'b','lineWidth',6.0);
 set(gca,'FontSize',16)
 xlabel('\bf Time(days)','fontsize',30,'linewidth',30);ylabel('\bf Tumor Cell (P_T)','fontsize',30,'linewidth',30);
-%axis([0 600 1000 300000])
 set(gca,'linewidth',2.5); box off;
 set(gca,'FontSize',30)
 plot(t, w(1, :),'c-.','lineWidth',5.0);
 set(gca,'FontSize',16)
 xlabel('\bf  Time(days) ','fontsize',30,'linewidth',30);ylabel('\bf  Tumor Cell (P_T) ','fontsize',30,'linewidth',30);
-%axis([0 600 1000 100000])
 set(gca,'linewidth',2.5); box off;
 set(gca,'FontSize',30)
-%legend('exact  for h=10^{-4}  ','approx. for h=10^{-4}')
 [~, hobj, ~, ~] = legend({'\bf P_T at r_1=0.2045','\bf P_T at r_1=0.5045','\bf P_T at r_1=0.8045'},'Fontsize',6,'Location','northeast');
-
-
 hl = findobj(hobj,'type','line');
 set(hl,'LineWidth',10);
 ht = findobj(hobj,'type','text');
