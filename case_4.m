@@ -102,14 +102,12 @@ figure;
 plot(t, y(1,:),'b','LineWidth',4.5); hold on;
 set(gca,'FontSize',16)
 xlabel('\bf Time(days)','fontsize',30,'linewidth',30);ylabel('Tumor Cell (P_T)','fontsize',30,'linewidth',30);
-%axis([0 600 1000 300000])
 set(gca,'linewidth',2); box off;
 set(gca,'FontSize',30)
 hold on
 plot(t, z(1,:),'r','LineWidth',4.5);
 set(gca,'FontSize',16)
 xlabel('\bf  Time(days) ','fontsize',30,'linewidth',30);ylabel('\bf Tumor Cell (P_T)','fontsize',30,'linewidth',30);
-%axis([0 600 1000 100000])
 set(gca,'linewidth',2); box off;
 set(gca,'FontSize',30)
 %legend('exact  for h=10^{-4}  ','approx. for h=10^{-4}')
