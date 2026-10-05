@@ -86,8 +86,7 @@ t = t0:dt:tf;
 z0 = [T0; H0; R0; N0; D0; E0; S0];
 z = zeros(length(z0), length(t));
 z(:, 1) = z0;
-%params.lambda1= 0.02; 
-% RK4 integration
+
 for i = 1:length(t)-1
     k1 = dt * model_control(t(i), z(:,i), params);
     k2 = dt * model_control(t(i)+dt/2, z(:,i)+k1/2, params);
@@ -101,17 +100,14 @@ figure;
 plot(t, y(5,:),'b','LineWidth',4); hold on;
 set(gca,'FontSize',16)
 xlabel('\bf Time(days)','fontsize',30,'linewidth',30);ylabel('\bf Drug Concentration (P_D)','fontsize',30,'linewidth',30);
-%axis([0 600 1000 300000])
 set(gca,'linewidth',2); box off;
 set(gca,'FontSize',30)
 hold on
 plot(t, z(5,:),'c','LineWidth',4);
 set(gca,'FontSize',16)
 xlabel('\bf  Time(days) ','fontsize',30,'linewidth',30);ylabel('\bf Drug Concentration (P_D)','fontsize',30,'linewidth',30);
-%axis([0 600 1000 100000])
 set(gca,'linewidth',2); box off;
 set(gca,'FontSize',30)
-%legend('exact  for h=10^{-4}  ','approx. for h=10^{-4}')
 [~, hobj, ~, ~] = legend({'\bf without control ','\bf with control u_1'},'Fontsize',15,'Location','northeast');
 hl = findobj(hobj,'type','line');
 set(hl,'LineWidth',8);
